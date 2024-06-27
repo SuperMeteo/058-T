@@ -4,25 +4,45 @@ import Link from "next/link";
 export default function Nav() {
   return (
     <>
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-md-3 mb-2 mb-md-0">
-          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+      <nav class="navbar navbar-expand-lg bg-gradient py-3">
+        <div class="container-fluid mx-auto">
+          <a class="navbar-brand" >
+
+
           </a>
-        </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav" >
+              <li class="nav-item">
+                <Link href="/" class="nav-link"><i class="bi bi-send"></i> หน้าเเรก </Link>
+              </li>
+              <li class="nav-item">
+                <Link href="/about" class="nav-link"><i class="bi bi-send"></i> เกี่ยวกับ </Link>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-square"></i> บริการ
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="index.html#general-boat-section">ประเภทของเรือ</a></li>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 link-secondary">HOME</a></li>
-          <li><a href="#" class="nav-link px-2">Features</a></li>
-          <li><a href="#" class="nav-link px-2">Pricing</a></li>
-          <li><a href="#" class="nav-link px-2">FAQs</a></li>
-          <li><Link href="/about" class="nav-link px-2">About</Link></li>
-        </ul>
 
-        <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">Login</button>
-          <button type="button" class="btn btn-primary">Sign-up</button>
+                  <li><a class="dropdown-item" href="wiki3.html">ช่วยเหลือ</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <Link href="/" class="nav-link"><i class="bi bi-send"></i> ติดต่อ </Link>
+              </li>
+            </ul>
+            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal" onclick="redirectToOtherPage()">
+              <i class="bi bi-file-lock"></i> Login
+            </button>
+          </div>
         </div>
-      </header>
+      </nav>
+
     </>
   );
 }
